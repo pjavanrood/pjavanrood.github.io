@@ -6,6 +6,11 @@ import os
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
+
+if __name__ == '__main__':
+    app.run(host="0.0.0.0", port=5000)
+
+
 @app.route('/')
 def index():
     return render_template("index.html")
@@ -61,11 +66,11 @@ def form():
 
 
 
-    sender = os.environ.get('sitemail')
+    sender = str(os.environ.get('sitemail'))
 
     server = smtplib.SMTP("smtp.gmail.com", 587)
     server.starttls()
-    server.login(sender, os.environ.get('mailpass'))
+    server.login(sender, str(os.environ.get('mailpass')))
     
 
     try:
