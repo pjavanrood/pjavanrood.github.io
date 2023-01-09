@@ -1,9 +1,10 @@
 from flask import Flask,  render_template, request, session, flash, redirect, url_for, jsonify
 import smtplib
 import os
-
+from flask_sitemap import Sitemap
 
 app = Flask(__name__)
+ext = Sitemap(app=app)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
 
@@ -15,6 +16,9 @@ if __name__ == '__main__':
 def index():
     return render_template("index.html")
 
+@ext.register_generator
+def index():
+    yield 'index', {}
 
 @app.route('/kamino')
 def kamino():
