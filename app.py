@@ -58,6 +58,14 @@ def frenzy():
 def gas():
     return render_template("projectsHTML/gas.html")
 
+@app.route('/ngram')
+def ngram():
+    return render_template("projectsHTML/ngram.html")
+
+@app.route('/smarthome')
+def smarthome():
+    return render_template("projectsHTML/smarthome.html")
+
 
 @app.route('/form', methods=['POST'])
 def form():
