@@ -66,6 +66,12 @@ def ngram():
 def smarthome():
     return render_template("projectsHTML/smarthome.html")
 
+@app.route('/biztech')
+def biztech():
+    return render_template("projectsHTML/biztech.html")
+
+
+
 
 @app.route('/form', methods=['POST'])
 def form():
