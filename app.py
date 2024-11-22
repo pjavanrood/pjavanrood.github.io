@@ -70,6 +70,10 @@ def smarthome():
 def biztech():
     return render_template("projectsHTML/biztech.html")
 
+@app.route('/kvdb')
+def kvdb():
+    return render_template("projectsHTML/kvdb.html")
+
 
 
 
